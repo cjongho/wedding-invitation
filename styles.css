@@ -1,0 +1,91 @@
+/* 애플 스타일 모바일 청첩장 CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 라이트 모드용 변수 */
+  --background-color: #ffffff;
+  --text-color: #1d1d1f; /* 어두운 회색 (거의 검정색) */
+  --secondary-text-color: #86868b;
+  --border-color: #d2d2d7;
+  --highlight-color: #0071e3;
+  --section-background: #f5f5f7;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
+  color: var(--text-color); /* 기본 글자색은 어두운 색상 */
+  background-color: var(--background-color);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 헤더 섹션의 글자색만 흰색으로 지정 */
+.header .couple-names,
+.header .wedding-date, 
+.header .wedding-location {
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* 섹션 내부의 글자색은 어두운 색상으로 명시적 지정 */
+section {
+  color: var(--text-color); /* 섹션 내부 글자색 */
+  padding: 4em 1.5em;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s, transform 0.8s;
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+section .section-title {
+  color: var(--text-color); /* 섹션 제목 글자색 */
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+/* 그 외 필요한 요소들의 텍스트 색상을 명시적으로 지정 */
+.greeting .message {
+  color: var(--text-color);
+}
+
+.venue p, .date-time p {
+  color: var(--text-color);
+}
+
+.countdown {
+  color: var(--highlight-color);
+  font-weight: 500;
+  margin-top: 1em;
+}
+
+/* 다크 모드 처리 (선택적) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #000000;
+    --text-color: #f5f5f7; /* 다크 모드에서는 밝은 색상 */
+    --secondary-text-color: #a1a1a6;
+    --border-color: #424245;
+    --highlight-color: #2997ff;
+    --section-background: #1d1d1f;
+  }
+
+  /* 다크 모드에서는 모달 내용이 어둡게, 글자는 밝게 */
+  .modal-content {
+    background-color: var(--background-color);
+  }
+
+  .bank-info p {
+    color: var(--text-color);
+  }
+}
+
+/* 나머지 CSS 코드는 그대로 유지 */
