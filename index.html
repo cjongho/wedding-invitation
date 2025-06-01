@@ -1,22 +1,99 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>모바일 청첩장</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리의 결혼식에 초대합니다</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <section class="hero">
-    <h1>김준수 ❤️ 이서연</h1>
-    <p>2025년 10월 10일 (금) 오후 1시<br>서울 예식장</p>
-  </section>
+    <div class="container">
+        <!-- 헤더 섹션 -->
+        <header class="header">
+            <div class="cover-image">
+                <img src="images/main_photo.jpg" id="mainImage" alt="신랑신부 메인 사진">
+            </div>
+            <h1 class="couple-names">신랑 ♥ 신부</h1>
+            <p class="wedding-date">2025년 8월 15일 토요일 오후 2시</p>
+            <p class="wedding-location">웨딩홀 이름</p>
+        </header>
 
-  <section class="greeting">
-    <h2>초대합니다</h2>
-    <p>서로에게 닿은 마음이 하나 되어<br>저희 두 사람이 결혼합니다.<br>기쁨의 자리에 함께해 주세요.</p>
-  </section>
+        <!-- 인사말 섹션 -->
+        <section class="greeting">
+            <div class="section-title">초대합니다</div>
+            <div class="message">
+                <p>함께할 때에 비로소 깨닫는 사랑임을</p>
+                <p>영원히 기억하며 살겠습니다.</p>
+                <p>저희의 첫 시작을 축복해 주세요.</p>
+            </div>
+            <div class="parents">
+                <p><span>김○○</span> · <span>이○○</span>의 장남 <span>김신랑</span></p>
+                <p><span>박○○</span> · <span>최○○</span>의 장녀 <span>박신부</span></p>
+            </div>
+        </section>
 
-  <script src="script.js"></script>
+        <!-- 일시 및 장소 섹션 -->
+        <section class="location">
+            <div class="section-title">일시 및 장소</div>
+            <div class="date-time">
+                <p>2025년 8월 15일 토요일</p>
+                <p>오후 2시</p>
+            </div>
+            <div class="venue">
+                <p>웨딩홀 이름</p>
+                <p>서울시 강남구 테헤란로 123</p>
+            </div>
+            <div id="map" class="map-container"></div>
+            <div class="navigation-buttons">
+                <a href="#" class="navi-btn" id="navermap">네이버지도</a>
+                <a href="#" class="navi-btn" id="kakaomap">카카오맵</a>
+                <a href="#" class="navi-btn" id="tmap">티맵</a>
+            </div>
+        </section>
+
+        <!-- 갤러리 섹션 -->
+        <section class="gallery">
+            <div class="section-title">갤러리</div>
+            <div class="photo-grid">
+                <!-- 사진들이 들어갈 자리 -->
+            </div>
+        </section>
+
+        <!-- 마음 전하는 곳 -->
+        <section class="account">
+            <div class="section-title">마음 전하는 곳</div>
+            <div class="account-buttons">
+                <button class="account-btn" id="groom-account">신랑측 계좌번호</button>
+                <button class="account-btn" id="bride-account">신부측 계좌번호</button>
+            </div>
+        </section>
+
+        <!-- 공유하기 섹션 -->
+        <section class="share">
+            <div class="section-title">공유하기</div>
+            <div class="share-buttons">
+                <button id="kakao-share" class="share-btn">카카오톡 공유</button>
+                <button id="copy-url" class="share-btn">링크 복사</button>
+            </div>
+        </section>
+
+        <!-- 푸터 -->
+        <footer class="footer">
+            <p>© 2025 신랑 & 신부의 결혼식</p>
+        </footer>
+
+        <!-- 모달 템플릿 -->
+        <div class="modal" id="account-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <!-- 계좌번호 정보가 여기에 표시됨 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
